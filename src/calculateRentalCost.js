@@ -7,18 +7,20 @@ function calculateRentalCost(days) {
   const dayRentalCost = 40;
   const smallDiscount = 20;
   const bigDiscount = 50;
+  const smallVocation = 3;
+  const bigVocation = 7;
 
   const countDays = days * dayRentalCost;
 
-  if (days < 3) {
+  if (days < smallVocation) {
     return countDays;
   }
 
-  if (days >= 3 && days < 7) {
+  if (days >= smallVocation && days < bigVocation) {
     return countDays - smallDiscount;
   }
 
-  if (days >= 7) {
+  if (days >= bigVocation) {
     return countDays - bigDiscount;
   }
 }
