@@ -12,17 +12,15 @@ function calculateRentalCost(days) {
 
   const countDays = days * dayRentalCost;
 
-  if (days < smallVocation) {
-    return countDays;
+  if (days >= bigVocation) {
+    return countDays - bigDiscount;
   }
 
   if (days >= smallVocation && days < bigVocation) {
     return countDays - smallDiscount;
   }
 
-  if (days >= bigVocation) {
-    return countDays - bigDiscount;
-  }
+  return countDays;
 }
 
 module.exports = calculateRentalCost;
